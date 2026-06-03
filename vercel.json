@@ -1,10 +1,8 @@
 {
-  "buildCommand": "echo 'Static files only, no build needed'",
-  "installCommand": "echo 'No dependencies to install'",
   "version": 2,
-  "public": false,
-  "env": {},
-  "regions": ["iad1"],
+  "buildCommand": "echo 'Static site - no build needed'",
+  "installCommand": "echo 'No dependencies'",
+  "outputDirectory": ".",
   "headers": [
     {
       "source": "/service-worker.js",
@@ -34,17 +32,13 @@
         {
           "key": "X-Frame-Options",
           "value": "SAMEORIGIN"
-        },
-        {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
         }
       ]
     }
   ],
   "rewrites": [
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ]
